@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            padding: 15px 25px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button.stop {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <h1>Motor Control</h1>
+    <button class="button" onclick="sendCommand('/forward')">Forward</button>
+    <button class="button" onclick="sendCommand('/backward')">Backward</button>
+    <button class="button" onclick="sendCommand('/left')">Left</button>
+    <button class="button" onclick="sendCommand('/right')">Right</button>
+    <button class="button stop" onclick="sendCommand('/stop')">Stop</button>
+
+    <script>
+        function sendCommand(endpoint) {
+            fetch(endpoint, {
+                method: 'POST'
+            }).then(response => response.json())
+              .then(data => alert(data.status))
+              .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
