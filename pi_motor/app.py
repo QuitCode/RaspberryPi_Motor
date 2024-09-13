@@ -62,8 +62,8 @@ def index():
                 <form id="control-form" action="/control" method="post">
                     <button type="submit" name="direction" value="forward" class="button">Forward</button>
                     <button type="submit" name="direction" value="backward" class="button">Backward</button>
-                    <button type="submit" name="direction" value="left" class="button">Left</button>
-                    <button type="submit" name="direction" value="right" class="button">Right</button>
+                    <button type="submit" name="direction" value="left" class="button">Right</button>
+                    <button type="submit" name="direction" value="right" class="button">Left</button>
                     <button type="submit" name="direction" value="stop" class="button">Stop</button>
                 </form>
                 <label for="speed">Speed:</label>
